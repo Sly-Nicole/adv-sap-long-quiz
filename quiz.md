@@ -32,7 +32,9 @@ PALILLEO
    2. Data Management - SOA relies of centralized data store, while microservices often have their own databases.
    3. Deployment - SOA is deployed as a whole or part of larger application while Microservices are independent deployable, allowing for granular releases.
 
-6. Define Web Services - Web services are software systems designed to support interoperable machine-to-machine communication over a network. They provide a standardized way for different applications and systems to communicate and exchange data regardless of the programming languages, platforms, or technologies they are built on.
+6. Define Web Services
+
+   - Web services are software systems designed to support interoperable machine-to-machine communication over a network. They provide a standardized way for different applications and systems to communicate and exchange data regardless of the programming languages, platforms, or technologies they are built on.
 
 7. List and discuss the benefits of using Web Services.
 
@@ -40,34 +42,46 @@ PALILLEO
 
    2. Standardized Protocols: For client-server connection, web services frequently employ standard communication protocols like HTTP (Hypertext Transfer Protocol). Data sharing is frequently done via other protocols like REST (Representational State Transfer) and SOAP (Simple Object Access Protocol).
 
-   3. Data Exchange Formats: Web services arrange and exchange data using standardized formats like JSON (JavaScript Object Notation) and XML (eXtensible Markup Language).
+   3. Low Costg Communication: Web services use SOAP over HTTP because, that provides a standardized protocol for communication. it makes use of the existing infrastructure of the internet making it a cost effective choice fro communication.
 
 8. List and discuss the characteristics of Web Services.
 
-   1. Flexibility - By distributing several instances among servers, web services can be horizontally scaled to meet growing demand.
-      Scalability is crucial because it guarantees that web services can handle rising user counts or volumes of data without sacrificing efficiency.
+   1. XML-Based - XML-based characteristic of web services is foundational for achieving interoperability, platform independence, and standardization in the exchange of data between distributed systems. It serves as a universal language for communication, enabling diverse applications and services to work together seamlessly.
 
-   1. Service Breakdown - Higher-level services that provide more sophisticated functionality can be created by combining or composing web services.
-      Significance: The construction of modular and reusable services is facilitated by service composition, which permits the production of applications with a wide range of complex functionalities.
+   2. Loosely Coupled - In a loosely coupled system, the client and web service have a flexible connection, allowing the web service interface to evolve independently. In contrast, tightly coupled systems bind client and server logic closely, necessitating updates in one when the other changes.
+
+   3. Coarse-Grained - In Java, services use distinct methods for enterprise-level operations. Adopting a coarse-grained approach is recommended, encapsulating significant functionality in interfaces. Web services simplify this process, defining services with the right business logic.
+
+   4. Ability to be Synchronous or Asynchronous - Synchronicity in service invocation determines how tightly the client is bound to the service execution. In synchronous scenarios, the client pauses, awaiting the service to finish before proceeding. Conversely, asynchronous operations enable the client to invoke a service and continue with other tasks. Asynchronous clients retrieve results later, while synchronous clients get results upon the service's completion. Asynchronous capability is vital for fostering loosely coupled systems.
+
+   5. Enables Remote Procedure Calls (RPCs) -Web services empower clients to trigger processes on distant objects through a protocol grounded in XML. These remote procedures outline the necessary input and output parameters, creating a conduit for effective communication between clients and remote entities.
+
+   6. Supports Document Exchange - XML's versatility extends beyond data representation to encompass complex document structures. These documents range from simple ones, such as current addresses, to intricate ones, like complete books or Request for Quotation (RFQ). Web services seamlessly enable the transparent exchange of such documents, promoting effective business integration.
 
 9. List and discuss the distinct roles in Web Services Architecture.
 
-   1. Lifecycle Management of Services - includes web service development, deployment, retirement, and planning.
-      oversees all aspects of the service's lifespan, including versioning, deprecation, and updates.
-      makes certain that services follow rules and are in line with corporate objectives.
+   1. Provider - The provider creates and offers a web service, developing functionalities, specifying protocols, and hosting it on a server. They provide a clear service description, including endpoint and security details.
 
-   2. Manager of Service Security - puts in place and sustains web services security safeguards.
-      oversees encryption, authorization, and authentication to safeguard information and guarantee the integrity of communication.
-      guarantees adherence to security guidelines and regulations.
+   2. Requestor - The requestor, a client app in languages like .Net or Java, communicates with a web service to access specific functionalities, serving its functional needs.
 
-   3. Assurance of Service Quality (QA) - guarantees the dependability and quality of web services.
-      tests the service to make sure it performs as promised in the contract.
-      keeps an eye on the service's dependability, scalability, and performance.
+   3. Broker - The broker, within web services architecture, functions as the application that facilitates access to UDDI (Universal Description, Discovery, and Integration).
+
+   4. Publish - Providers inform the service registry (broker) about the web service via the broker's publish interface, making services accessible to clients and simplifying discovery and integration.
+
+   5. Find - The requestor checks with the broker to discover a published web service.
+
+   6. Bind - Using the information acquired from the broker (service registry) about the web service, the requestor can establish a connection and invoke the desired functionality.
 
 10. List and discuss the Web Services Components.
 
-11. Security Guidelines (such as WS-Security) - One of the most important aspects of web services is security. A set of guidelines for securing data flow and communication between web service providers and customers is defined by standards such as WS-Security. Features like digital signatures, encryption, and authentication are included in this.
+SOAP (Simple Object Access Protocol)
 
-12. Intermediary - Software that makes it easier for distributed systems to communicate and exchange data is known as middleware. To improve connectivity and communication, middleware in the context of web services may comprise elements like message queues, service buses, and other integration tools.
+- SOAP is an OS-agnostic, XML-based communication protocol. It facilitates seamless information exchange between applications, operating independently of platforms and languages. By defining how to encode HTTP headers and XML files, SOAP ensures effective communication while supporting server firewalls for enhanced security.
 
-13. Service Termination - The URL or URI where a web service is hosted and accessible is known as the service endpoint. It acts as the point of contact between service users and the online service.
+WSDL (Web Services Description Language)
+
+- WSDL is an XML-based language designed for describing and accessing web services. As a crucial component of UDDI, it enables businesses to list themselves and their services on the internet. Functioning as a navigation tool, WSDL guides individuals and other businesses in accessing these services. This language, written in XML, plays an integral role in the standardized description and accessibility of web services.
+
+UDDI (Universal Description, Discovery, and Integration)
+
+- UDDI is an XML-based standard for describing, publishing, and discovering web services. As a vital component in the trio of foundational web service standards with SOAP and WSDL, UDDI utilizes WSDL to detail web service interfaces. This open, platform-independent framework acts as a distributed registry, enhancing the visibility and accessibility of web services.
